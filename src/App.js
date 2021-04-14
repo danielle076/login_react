@@ -2,8 +2,10 @@ import React from "react";
 import {
     Switch,
     Route,
-    Link
+    Link,
+    NavLink
 } from "react-router-dom";
+import './App.css';
 import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
@@ -16,19 +18,19 @@ export default function App() {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/">Home</Link>
+                        <NavLink to="/">Home</NavLink>
                     </li>
                     <li>
-                        <Link to="/Signup">Sign up</Link>
+                        <NavLink to="/Signup">Sign up</NavLink>
                     </li>
                     <li>
-                        <Link to="/Signin">Sign in</Link>
+                        <NavLink to="/Signin">Sign in</NavLink>
                     </li>
                     <li>
-                        <Link to="/Profile">Profile</Link>
+                        <NavLink to="/Profile">Profile</NavLink>
                     </li>
                     <li>
-                        <Link to="/Contact">Contact</Link>
+                        <NavLink to="/Contact">Contact</NavLink>
                     </li>
                 </ul>
             </nav>

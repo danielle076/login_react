@@ -6,9 +6,10 @@ export default function SignInForm() {
     const {register, handleSubmit, formState: { errors }} = useForm();
 
     function onSubmit() {
+        console.log("Jij wilt versturen")
     }
 
-    console.log("ERROR:", errors)
+    // console.log("ERROR:", errors)
 
     return <form onSubmit={handleSubmit(onSubmit)}>
 
