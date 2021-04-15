@@ -10,14 +10,13 @@ export default function SignUpForm() {
         console.log(data);
     }
 
-    console.log("ERROR:", errors)
-
     return <form onSubmit={handleSubmit(onSubmit)}>
 
         <label htmlFor="username">Username</label>
         <input
             name="username"
             type="text"
+            id="username-field"
             placeholder="Enter your username"
             aria-invalid={errors.username ? "true" : "false"}
             {...register('username', { required: true })}
@@ -28,15 +27,16 @@ export default function SignUpForm() {
         </span>
         )}
 
-        <label htmlFor="emailAdress">Email adress</label>
+        <label htmlFor="email">Email adress</label>
         <input
-            name="emailAdress"
+            name="email"
             type="text"
+            id="email-field"
             placeholder="Enter your email"
-            aria-invalid={errors.emailAdress ? "true" : "false"}
-            {...register('emailAdress', { required: true })}
+            aria-invalid={errors.email ? "true" : "false"}
+            {...register('email', { required: true })}
         />
-        {errors.emailAdress && (
+        {errors.email && (
             <span role="alert">
           This field is required
         </span>
@@ -46,6 +46,7 @@ export default function SignUpForm() {
         <input
             name="password"
             type="password"
+            id="password-field"
             placeholder="Enter your password"
             aria-invalid={errors.password ? "true" : "false"}
             {...register('password', { required: true })}
@@ -56,25 +57,11 @@ export default function SignUpForm() {
         </span>
         )}
 
-        <label htmlFor="confirmPassword">Confirm password</label>
-        <input
-            name="confirmPassword"
-            type="password"
-            placeholder="Enter password again"
-            aria-invalid={errors.confirmPassword ? "true" : "false"}
-            {...register('confirmPassword', { required: true })}
-        />
-        {errors.confirmPassword && (
-            <span role="alert">
-          This field is required
-        </span>
-        )}
-
         <input
             type="submit"
         />
         <span>
-            Already have an account? Login <Link to="#">here</Link>.
+            Already have an account? Login <Link to="/Signin">here</Link>.
         </span>
 
     </form>

@@ -2,7 +2,6 @@ import React from "react";
 import {
     Switch,
     Route,
-    Link,
     NavLink
 } from "react-router-dom";
 import './App.css';

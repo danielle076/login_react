@@ -5,22 +5,21 @@ import {useForm} from "react-hook-form";
 export default function SignInForm() {
     const {register, handleSubmit, formState: { errors }} = useForm();
 
-    function onSubmit() {
-        console.log("Jij wilt versturen")
+    function onSubmit(data) {
+        console.log(data)
     }
-
-    // console.log("ERROR:", errors)
 
     return <form onSubmit={handleSubmit(onSubmit)}>
 
-        <label htmlFor="username">Username</label>
+        <label htmlFor="email">E-mail</label>
         <input
-            name="username"
+            name="email"
             type="text"
-            aria-invalid={errors.username ? "true" : "false"}
-            {...register('username', { required: true })}
+            id="email-field"
+            aria-invalid={errors.email ? "true" : "false"}
+            {...register('email', { required: true })}
         />
-        {errors.username && (
+        {errors.email && (
             <span role="alert">
           This field is required
         </span>
@@ -30,6 +29,7 @@ export default function SignInForm() {
         <input
             name="password"
             type="password"
+            id="password-field"
             aria-invalid={errors.password ? "true" : "false"}
             {...register('password', { required: true })}
         />
